@@ -267,11 +267,20 @@
 
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 0.5rem;
+    }
   }
 
   &:focus {
     outline: none;
     animation: pulsate 1s infinite;
+  }
+
+  & span {
+    margin-left: 0.3rem;
+    transition: margin-left 0.2s;
   }
 }
 
@@ -356,5 +365,70 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+/// REVIEWS
+
+.review {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  color: var(--color-grey-dark-1);
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-name {
+    color: var(--color-grey-dark-1);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: var(--color-primary);
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    color: var(--color-grey-light-2);
+    line-height: 1;
+    font-family: sans-serif;
+    z-index: 1;
   }
 }
